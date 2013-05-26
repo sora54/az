@@ -1,0 +1,7 @@
+<h1>{{ tracking.tracking_number }}</h1>
+<ul>
+{% for tracedetail in tracking.tracedetail_set.all %}
+    <li>{{ tracedetail.description }}</li>
+{% endfor %}
+</ul>
+<a href="{% url 'details' tracking.tracking_number %}">{{ tracking.tracking_number }}
